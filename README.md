@@ -62,17 +62,19 @@ womens-clothing-sentiment/
 ### Installation
 
 1. **Clone the repository**
-
+```bash
 git clone https://github.com/yourusername/womens-clothing-sentiment.git
 cd womens-clothing-sentiment
+
 Create virtual environment
 
-
+bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 Install dependencies
 
-
+```bash
 pip install -r requirements.txt
 Download the dataset
 
@@ -82,32 +84,33 @@ Place the CSV file in data/raw/
 
 Run the Jupyter notebook
 
-
+bash
 jupyter notebook notebooks/01_sentiment_analysis_complete.ipynb
 Run the Applications
 Streamlit Web App
-
+bash
 streamlit run frontend/streamlit_app.py
 Access at: http://localhost:8501
 
 FastAPI Backend
-
+bash
 uvicorn api.app:app --reload
 Access at: http://localhost:8000
 API Docs: http://localhost:8000/docs
 
 Docker Deployment
-
-### Build the image
+bash
+# Build the image
 docker build -t clothing-sentiment .
 
-### Run Streamlit app
+# Run Streamlit app
 docker run -p 8501:8501 clothing-sentiment streamlit
 
-### Run FastAPI app
+# Run FastAPI app
 docker run -p 8000:8000 clothing-sentiment api
 Or use docker-compose:
 
+bash
 docker-compose up
 📊 Dataset
 Women's E-Commerce Clothing Reviews
@@ -226,3 +229,5 @@ Dataset by Nicolas Potato on Kaggle
 Inspired by various NLP tutorials and projects
 
 Built with ❤️ for the data science community
+
+
