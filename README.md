@@ -92,11 +92,11 @@ API Docs: http://localhost:8000/docs
 
 7. Docker Deployment
 
-# Build the image
+### Build the image
 docker build -t clothing-sentiment .
-# Run Streamlit app
+### Run Streamlit app
 docker run -p 8501:8501 clothing-sentiment streamlit
-# Run FastAPI app
+### Run FastAPI app
 docker run -p 8000:8000 clothing-sentiment api
 
 8. Or use docker-compo
