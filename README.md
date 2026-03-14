@@ -62,67 +62,91 @@ womens-clothing-sentiment/
 ### Installation
 
 1. **Clone the repository**
-- bash
+
 git clone https://github.com/yourusername/womens-clothing-sentiment.git
 cd womens-clothing-sentiment
+Create virtual environment
 
- -Create virtual environment
+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install dependencies
 
-2. Install dependencies
+
 pip install -r requirements.txt
+Download the dataset
 
-3. Download the dataset
 Download from Kaggle
+
 Place the CSV file in data/raw/
 
-4. Run the Jupyter notebook
-jupyter notebook notebooks/01_sentiment_analysis_complete.ipynb
+Run the Jupyter notebook
 
-5. Run the Applications
+
+jupyter notebook notebooks/01_sentiment_analysis_complete.ipynb
+Run the Applications
 Streamlit Web App
+
 streamlit run frontend/streamlit_app.py
 Access at: http://localhost:8501
 
-6. FastAPI Backend
+FastAPI Backend
+
 uvicorn api.app:app --reload
 Access at: http://localhost:8000
 API Docs: http://localhost:8000/docs
 
-7. Docker Deployment
+Docker Deployment
 
 ### Build the image
 docker build -t clothing-sentiment .
+
 ### Run Streamlit app
 docker run -p 8501:8501 clothing-sentiment streamlit
+
 ### Run FastAPI app
 docker run -p 8000:8000 clothing-sentiment api
+Or use docker-compose:
 
-8. Or use docker-compo
 docker-compose up
-
 📊 Dataset
 Women's E-Commerce Clothing Reviews
+
 Source: Kaggle
+
 Size: 23,486 reviews
+
 Features:
+
 Clothing ID
+
 Age
+
 Review Title
+
 Review Text
+
 Rating (1-5)
+
 Recommended IND
+
 Positive Feedback Count
+
 Division Name
+
 Department Name
+
 Class Name
 
 🤖 Model
 The project uses Logistic Regression with TF-IDF features:
+
 TF-IDF Vectorizer: 5000 features, n-grams (1,2)
+
 Model: Logistic Regression with L2 regularization
+
 Accuracy: ~90% on test set
+
 Cross-validation: 5-fold CV score: ~89%
 
 📈 Performance
@@ -131,7 +155,6 @@ Accuracy	89.5%
 Precision (Positive)	0.92
 Recall (Positive)	0.96
 F1-Score (Positive)	0.94
-
 🌐 API Endpoints
 GET /
 Health check endpoint
@@ -155,33 +178,51 @@ Get model information
 
 🎯 Use Cases
 E-commerce Platforms: Automatically categorize customer feedback
+
 Customer Service: Prioritize negative reviews for quick response
+
 Product Analysis: Identify sentiment trends across products
+
 Market Research: Understand customer preferences and pain points
 
 🔧 Future Improvements
 Implement deep learning models (LSTM, BERT)
+
 Add multi-language support
+
 Create dashboard for business analytics
+
 Add real-time streaming analysis
+
 Implement A/B testing framework
 
 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
 👥 Contributing
+
 This project is primarily maintained by Warda Adan.
+
 If you’d like to contribute in the future, you are welcome to:
+
 Fork the repository
+
 Make improvements or fixes
+
 Submit a Pull Request
+
 Currently, no external contributors are required, but contributions are appreciated.
+
 Open a Pull Request
 
 📧 Contact
 Your Name - @email:wardaadan03@gmail.com
+
 Project Link: https://github.com/wardaadan03-netizen/women-clothing-sentiment
 
 🙏 Acknowledgments
 Dataset by Nicolas Potato on Kaggle
+
 Inspired by various NLP tutorials and projects
- Built with ❤️ for the data science community
+
+Built with ❤️ for the data science community
