@@ -1,229 +1,250 @@
-# 👕 Women's Clothing Reviews Sentiment Analysis
+👕 Women's Clothing Reviews Sentiment Analysis
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.25+-red.svg)](https://streamlit.io/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-orange.svg)](https://scikit-learn.org/)
 
-A complete end-to-end machine learning project for sentiment analysis on women's e-commerce clothing reviews. This project includes data exploration, model training, web application, and API deployment.
+An end-to-end Natural Language Processing (NLP) project that analyzes customer reviews from a women's clothing e-commerce platform and predicts sentiment using TF-IDF + Logistic Regression.
 
-## 📋 Project Overview
+The project includes:
 
-This project analyzes customer reviews to determine sentiment (Positive, Neutral, Negative) using Natural Language Processing (NLP) techniques. The dataset contains 23,486 real customer reviews from a women's clothing e-commerce store.
+📊 Data Exploration
 
-### 🎯 Key Features
+🤖 Machine Learning Model
 
-- **Interactive Dashboard**: Explore data with visualizations and statistics
-- **Real-time Sentiment Analysis**: Enter any review and get instant sentiment prediction
-- **Batch Processing**: Upload CSV files with multiple reviews for analysis
-- **REST API**: Integrate sentiment analysis into other applications
-- **Model Performance**: View confusion matrix, feature importance, and metrics
-- **Docker Support**: Easy deployment with containerization
+🌐 FastAPI Backend
 
-## 🏗️ Project Structure
-womens-clothing-sentiment/
+🎨 Streamlit Dashboard
+
+🐳 Docker Deployment
+
+📋 Project Overview
+
+Customer reviews contain valuable insights for businesses. This project analyzes 23,486 real customer reviews to classify sentiment into:
+
+✅ Positive
+
+😐 Neutral
+
+❌ Negative
+
+Using NLP techniques and machine learning, the system can automatically determine the sentiment of new reviews in real time.
+
+🎯 Key Features
+
+✔ Interactive Dashboard
+Explore dataset insights using Streamlit visualizations.
+
+✔ Real-Time Sentiment Prediction
+Enter any review and instantly get predicted sentiment.
+
+✔ Batch Review Analysis
+Upload CSV files and analyze multiple reviews at once.
+
+✔ REST API Integration
+Use FastAPI endpoints to integrate sentiment prediction into other applications.
+
+✔ Model Performance Insights
+View confusion matrix, evaluation metrics, and feature importance.
+
+✔ Docker Deployment
+Easily deploy using containerized environments.
+
+🏗️ Project Structure
+womens-clothing-sentiment
 │
-├── data/ # Dataset files
-│ ├── raw/ # Original dataset
-│ └── processed/ # Cleaned data
+├── data/
+│   ├── raw/
+│   └── processed/
 │
-├── notebooks/ # Jupyter notebooks
-│ └── 01_sentiment_analysis_complete.ipynb
+├── notebooks/
+│   └── sentiment_analysis.ipynb
 │
-├── src/ # Source code
-│ ├── preprocessing.py # Text preprocessing
-│ ├── model_training.py # Model training logic
-│ ├── evaluation.py # Evaluation metrics
-│ └── utils.py # Utility functions
+├── src/
+│   ├── preprocessing.py
+│   ├── model_training.py
+│   ├── evaluation.py
+│   └── utils.py
 │
-├── models/ # Trained models
-│ ├── logistic_regression.pkl
-│ ├── tfidf_vectorizer.pkl
-│ └── model_metrics.json
+├── models/
+│   ├── logistic_regression.pkl
+│   ├── tfidf_vectorizer.pkl
+│   └── model_metrics.json
 │
-├── api/ # FastAPI application
-│ └── app.py
+├── api/
+│   └── app.py
 │
-├── frontend/ # Streamlit application
-│ └── streamlit_app.py
+├── frontend/
+│   └── streamlit_app.py
 │
-├── requirements.txt # Dependencies
-├── Dockerfile # Docker configuration
-└── README.md # Project documentation
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.10 or higher
-- pip package manager
-- (Optional) Docker
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/womens-clothing-sentiment.git
+├── requirements.txt
+├── Dockerfile
+└── README.md
+🚀 Quick Start
+1️⃣ Clone Repository
+git clone https://github.com/wardaadan03-netizen/women-clothing-sentiment.git
 cd womens-clothing-sentiment
-Create virtual environment
-
-bash
+2️⃣ Create Virtual Environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install dependencies
 
-bash
+Activate environment:
+
+Windows
+
+venv\Scripts\activate
+
+Mac / Linux
+
+source venv/bin/activate
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-Download the dataset
+4️⃣ Download Dataset
 
-Download from Kaggle
+Dataset: Women's E-Commerce Clothing Reviews
 
-Place the CSV file in data/raw/
+Download from Kaggle and place it inside:
 
-Run the Jupyter notebook
-
-bash
-jupyter notebook notebooks/01_sentiment_analysis_complete.ipynb
-Run the Applications
-Streamlit Web App
-bash
+data/raw/
+🧪 Run the Applications
+▶ Streamlit Web App
 streamlit run frontend/streamlit_app.py
-Access at: http://localhost:8501
 
-FastAPI Backend
-bash
+Open in browser:
+
+http://localhost:8501
+⚡ FastAPI Backend
 uvicorn api.app:app --reload
-Access at: http://localhost:8000
-API Docs: http://localhost:8000/docs
 
-Docker Deployment
-bash
-# Build the image
+Access API:
+
+http://localhost:8000
+
+Interactive API documentation:
+
+http://localhost:8000/docs
+🐳 Docker Deployment
+
+Build Docker image:
+
 docker build -t clothing-sentiment .
 
-# Run Streamlit app
+Run Streamlit container:
+
 docker run -p 8501:8501 clothing-sentiment streamlit
 
-# Run FastAPI app
-docker run -p 8000:8000 clothing-sentiment api
-Or use docker-compose:
+Run FastAPI container:
 
-bash
-docker-compose up
+docker run -p 8000:8000 clothing-sentiment api
 📊 Dataset
+
 Women's E-Commerce Clothing Reviews
 
 Source: Kaggle
+Total Reviews: 23,486
 
-Size: 23,486 reviews
+Dataset Features
+Feature	Description
+Clothing ID	Product identifier
+Age	Customer age
+Review Title	Title of review
+Review Text	Full review text
+Rating	Rating from 1–5
+Recommended IND	Whether customer recommends the product
+Positive Feedback Count	Helpful votes
+Division Name	Clothing division
+Department Name	Department category
+Class Name	Product category
+🤖 Machine Learning Model
 
-Features:
+The model uses TF-IDF feature extraction combined with Logistic Regression.
 
-Clothing ID
+Model Configuration
 
-Age
+TF-IDF Features: 5000
 
-Review Title
+N-grams: (1,2)
 
-Review Text
+Regularization: L2
 
-Rating (1-5)
+Algorithm: Logistic Regression
 
-Recommended IND
-
-Positive Feedback Count
-
-Division Name
-
-Department Name
-
-Class Name
-
-🤖 Model
-The project uses Logistic Regression with TF-IDF features:
-
-TF-IDF Vectorizer: 5000 features, n-grams (1,2)
-
-Model: Logistic Regression with L2 regularization
-
-Accuracy: ~90% on test set
-
-Cross-validation: 5-fold CV score: ~89%
-
-📈 Performance
+📈 Model Performance
 Metric	Score
 Accuracy	89.5%
-Precision (Positive)	0.92
-Recall (Positive)	0.96
-F1-Score (Positive)	0.94
+Precision	0.92
+Recall	0.96
+F1 Score	0.94
+
+Cross-Validation Score:
+
+~89% (5-Fold CV)
 🌐 API Endpoints
+Health Check
 GET /
-Health check endpoint
 
+Returns API status.
+
+Predict Single Review
 POST /predict
-Predict sentiment for a single review
 
-json
+Example request:
+
 {
-    "text": "I love this dress!"
+"text": "I love this dress!"
 }
+Predict Multiple Reviews
 POST /predict/batch
-Predict sentiment for multiple reviews
 
-json
+Example request:
+
 {
-    "texts": ["Great product!", "Too small", "Average quality"]
+"texts": ["Great product!", "Too small", "Average quality"]
 }
+Model Information
 GET /model/info
-Get model information
+
+Returns model configuration and metrics.
 
 🎯 Use Cases
-E-commerce Platforms: Automatically categorize customer feedback
 
-Customer Service: Prioritize negative reviews for quick response
+🛒 E-Commerce Platforms
+Automatically analyze customer reviews.
 
-Product Analysis: Identify sentiment trends across products
+📞 Customer Support
+Prioritize negative feedback for faster responses.
 
-Market Research: Understand customer preferences and pain points
+📦 Product Insights
+Understand product sentiment trends.
+
+📊 Market Research
+Identify customer preferences and issues.
 
 🔧 Future Improvements
-Implement deep learning models (LSTM, BERT)
 
-Add multi-language support
+Deep Learning models (LSTM / BERT)
 
-Create dashboard for business analytics
+Multi-language sentiment analysis
 
-Add real-time streaming analysis
+Business analytics dashboard
 
-Implement A/B testing framework
+Real-time streaming sentiment analysis
+
+A/B testing framework
 
 📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-👥 Contributing
+This project is licensed under the MIT License.
 
-This project is primarily maintained by Warda Adan.
+👩‍💻 Author
 
-If you’d like to contribute in the future, you are welcome to:
+Warda Adan
 
-Fork the repository
+📧 Email: wardaadan03@gmail.com
 
-Make improvements or fixes
-
-Submit a Pull Request
-
-Currently, no external contributors are required, but contributions are appreciated.
-
-Open a Pull Request
-
-📧 Contact
-Your Name - @email:wardaadan03@gmail.com
-
-Project Link: https://github.com/wardaadan03-netizen/women-clothing-sentiment
+🔗 GitHub:
+https://github.com/wardaadan03-netizen/women-clothing-sentiment
 
 🙏 Acknowledgments
-Dataset by Nicolas Potato on Kaggle
 
-Inspired by various NLP tutorials and projects
+Dataset by Nicolas Potato (Kaggle)
 
-Built with ❤️ for the data science community
+Inspired by open-source NLP and machine learning projects
+
+⭐ If you found this project useful, consider giving it a star!
