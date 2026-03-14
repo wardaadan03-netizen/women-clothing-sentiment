@@ -1,0 +1,10 @@
+{
+    "accuracy": 0.8204901744314418,
+    "cv_mean": 0.821223202336505,
+    "cv_std": 0.002831750925949875,
+    "classes": [
+        "Negative",
+        "Neutral",
+        "Positive"
+    ]
+}

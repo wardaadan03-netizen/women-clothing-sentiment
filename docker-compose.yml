@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  streamlit-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/app
+    command: ["streamlit"]
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  fastapi-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    command: ["api"]
+    environment:
+      - PYTHONUNBUFFERED=1
